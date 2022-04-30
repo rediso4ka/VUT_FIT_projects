@@ -1,0 +1,452 @@
+\documentclass[11pt, a4paper]{article}
+
+\usepackage[left=2cm,text={17cm,24cm},top=3cm]{geometry}
+\usepackage[utf8]{inputenc}
+\usepackage[IL2]{fontenc}
+\usepackage[czech]{babel}
+\usepackage{times}
+\usepackage{multirow}
+\usepackage{hyperref}
+\usepackage[ruled,czech,linesnumbered]{algorithm2e}
+\usepackage{algorithmic}
+\usepackage{graphics}
+\usepackage{pdflscape}
+\usepackage{pict2e}
+
+
+\renewcommand{\algorithmicrequire}{\textbf{Input:}}
+\renewcommand{\algorithmicensure}{\textbf{Output:}}
+
+
+\begin{document}
+\shorthandoff{-}
+
+
+
+\begin{titlepage}
+\begin{center}
+    \huge
+    \textsc{\Huge Vysoké učení technické v Brně\\
+    \huge Fakulta informačních technologií}\\
+    \vspace{\stretch{0.382}}
+    \LARGE Typografie a~publikování\,--\,3. projekt\\
+    \Huge Tabulky a~obrázky\\
+    \vspace{\stretch{0.618}}
+\end{center}
+{\Large \today \hfill
+Aleksandr Shevchenko}
+\end{titlepage}
+
+
+
+\section{Úvodní strana}
+Název práce umístěte do zlatého řezu a~nezapomeňte uvést \uv{dnešní} datum a~vaše jméno a~příjmení.
+
+\section{Tabulky}
+Pro sázení tabulek můžeme použít buď prostředí\texttt{ tabbing }nebo prostředí\texttt{ tabular}.
+
+\subsection{Prostředí\texttt{ tabbing}}
+
+Při použití\texttt{ tabbing }vypadá tabulka následovně:
+
+\begin{tabbing}
+    Vodní melouny\quad \= 25,90\quad \= \kill
+    \textbf{Ovoce}  \> \textbf{Cena}\> \textbf{Množství} \\
+    Jablka          \> 25{,}90        \> 3\,kg \\
+    Hrušky          \> 27{,}40        \> 2{,}5\,kg \\
+    Vodní melouny   \> 35{,}-         \> 1\,kus \\
+\end{tabbing}
+Toto prostředí se dá také použít pro sázení algoritmů, ovšem vhodnější je použít prostředí\texttt{ algorithm }nebo\texttt{ algorithm2e }(viz sekce~\ref{sek3}).
+
+
+\subsection{Prostředí\texttt{ tabular}}
+Další možností, jak vytvořit tabulku, je použít prostředí\texttt{ tabular}. Tabulky pak budou vypadat takto\footnote{Kdyby byl problém s~\texttt{ cline}, zkuste se podívat třeba sem: \href{http://www.abclinuxu.cz/tex/poradna/show/325037}{http://www.abclinuxu.cz/tex/poradna/show/325037}.}:
+\bigskip
+\begin{table}[h]
+    \begin{center}
+    \begin{tabular}{| l | c | c |} \hline
+                    & \multicolumn{2}{| c |}{\textbf{Cena}} \\ \cline{2-3}
+    \textbf{Měna}   & \textbf{nákup}& \textbf{prodej} \\ \hline
+    EUR             & 24{,}775        & 25{,}943\\
+    GBP             & 29{,}394        & 30{,}492\\
+    USD             & 22{,}423        & 23{,}661\\ \hline
+    \end{tabular}
+    \caption{Tabulka kurzů k dnešnímu dni}\label{tab1}
+    \end{center}
+\end{table}
+
+
+\begin{table}[h]
+    \begin{center}
+    \begin{tabular}{| c | c |} \hline
+    $A$         & $\neg A$\\ \hline
+    \textbf{P}  & N\\
+    \textbf{O}  & O\\
+    \textbf{X}  & X\\
+    \textbf{N}  & P\\ \hline
+    \end{tabular}
+    \begin{tabular}{| c | c | c | c | c | c |} \hline
+    \multicolumn{2}{| c |}{\multirow{2}{*}{$A\wedge B$}}    & \multicolumn{4}{| c |}{$B$}\\ \cline{3-6}
+    \multicolumn{2}{| c |}{}                                & \textbf{P}& \textbf{O}& \textbf{X}& \textbf{N}\\ \hline
+    \multirow{4}{*}{$A$}& \textbf{P}                        & P         & O         & X         & N\\ \cline{2-6}
+                        & \textbf{O}                        & O         & O         & N         & N\\ \cline{2-6}
+                        & \textbf{X}                        & X         & N         & X         & N\\ \cline{2-6}
+                        & \textbf{N}                        & N         & N         & N         & N\\ \hline
+    \end{tabular}
+    \begin{tabular}{| c | c | c | c | c | c |} \hline
+    \multicolumn{2}{| c |}{\multirow{2}{*}{$A\vee B$}}  & \multicolumn{4}{| c |}{$B$}\\ \cline{3-6}
+    \multicolumn{2}{| c |}{}                            & \textbf{P}& \textbf{O}& \textbf{X}& \textbf{N}\\ \hline
+    \multirow{4}{*}{$A$}& \textbf{P}                    & P         & P         & P         & P\\ \cline{2-6}
+                        & \textbf{O}                    & P         & O         & P         & O\\ \cline{2-6}
+                        & \textbf{X}                    & P         & P         & X         & X\\ \cline{2-6}
+                        & \textbf{N}                    & P         & O         & X         & N\\ \hline
+    \end{tabular}
+    \begin{tabular}{| c | c | c | c | c | c |} \hline
+    \multicolumn{2}{| c |}{\multirow{2}{*}{$A\rightarrow B$}}   & \multicolumn{4}{| c |}{$B$}\\ \cline{3-6}
+    \multicolumn{2}{| c |}{}                                    & \textbf{P}& \textbf{O}& \textbf{X}& \textbf{N}\\ \hline
+    \multirow{4}{*}{$A$}& \textbf{P}                            & P         & O         & X         & N\\ \cline{2-6}
+                        & \textbf{O}                            & P         & O         & P         & O\\ \cline{2-6}
+                        & \textbf{X}                            & P         & P         & X         & X\\ \cline{2-6}
+                        & \textbf{N}                            & P         & P         & P         & P\\ \hline
+    \end{tabular}
+    \caption{Protože Kleeneho trojhodnotová logika už je \uv{zastaralá}, uvádíme si zde příklad čtyřhodnotové logiky}\label{tab2}
+    \end{center}
+\end{table}
+
+\section{Algoritmy}\label{sek3}
+Pokud budeme chtít vysázet algoritmus, můžeme použít prostředí\texttt{ algorithm\footnote{Pro nápovědu, jak zacházet s~prostředím\texttt{ algorithm}, můžeme zkusit tuhle stránku:\\\href{http://ftp.cstug.cz/pub/tex/CTAN/macros/latex/contrib/algorithms/algorithms.pdf}{http://ftp.cstug.cz/pub/tex/CTAN/macros/latex/contrib/algorithms/algorithms.pdf}.} }nebo\texttt{ algorithm2e\footnote{Pro\texttt{ algorithm2e }zase tuhle: \href{http://ftp.cstug.cz/pub/tex/CTAN/macros/latex/contrib/algorithm2e/doc/algorithm2e.pdf}{http://ftp.cstug.cz/pub/tex/CTAN/macros/latex/contrib/algorithm2e/doc/algorithm2e.pdf}.}}. Příklad použití prostředí\texttt{ algorithm2e }viz Algoritmus~\ref{alg1}.
+\bigskip
+\begin{algorithm}[h]\label{alg1}
+    \caption{\textsc{FastSLAM}}
+    \begin{algorithmic}[1]
+    \REQUIRE{$(X_{t-1},u_{t},z_{t})$}
+    \ENSURE{$X_{t}$}
+    \STATE $\overline{X_{t}}=X_{t}=0$
+    \FOR{$k=1$ to $M$}
+        \STATE \quad $x_{t}^{[k]}=$ \emph{sample\_motion\_model}$(u_{t},x_{t-1}^{[k]})$
+        \STATE \quad $\omega_{t}^{[k]}=$ \emph{measurement\_model}$(z_{t},x_{t}^{[k]},m_{t-1})$
+        \STATE \quad $m_{t}^{[k]}=updated\_occupancy\_grid(z_{t},x_{t}^{[k]},m_{t-1}^{[k]})$
+        \STATE \quad $\overline{X_{t}}=\overline{X_{t}}+\langle x_{x}^{[m]},\omega_{t}^{[m]}\rangle$
+    \ENDFOR
+    \FOR{$k=1$ to $M$}
+        \STATE \quad draw $i$ with probability $\approx \omega_{t}^{[i]}$
+        \STATE \quad add $\langle x_{x}^{[k]},m_{t}^{[k]}\rangle$ to $X_{t}$
+    \ENDFOR
+    \RETURN{$X_{t}$}
+    \end{algorithmic}
+\end{algorithm}
+
+\section{Obrázky}
+Do našich článků můžeme samozřejmě vkládat obrázky. Pokud je obrázkem fotografie, můžeme klidně použít bitmapový soubor. Pokud by to ale mělo být nějaké schéma nebo něco podobného, je dobrým zvykem takovýto obrázek vytvořit vektorově.
+
+\begin{figure}[h]
+    \centering
+    \scalebox{0.4}{\includegraphics{etiopan.eps} \reflectbox{\includegraphics{etiopan.eps}}}
+    \caption{Malý Etiopánek a jeho bratříček}\label{obr1}
+\end{figure}
+
+\newpage
+
+Rozdíl mezi vektorovým \dots
+
+\begin{figure}[h]
+    \centering
+    \scalebox{0.4}{\includegraphics{oniisan.eps}}
+    \caption{Vektorový obrázek}\label{obr2}
+\end{figure}
+
+\noindent\dots a~bitmapovým obrázkem
+
+\begin{figure}[h]
+    \centering
+    \scalebox{0.6}{\includegraphics{oniisan2.eps}}
+    \caption{Bitmapový obrázek}\label{obr3}
+\end{figure}
+
+\noindent se projeví například při zvětšení.
+
+Odkazy (nejen ty) na obrázky~\ref{obr1},~\ref{obr2} a~\ref{obr3}, na tabulky~\ref{tab1} a~\ref{tab2} a~také na algoritmus~\ref{alg1} jsou udělány pomocí křížových odkazů. Pak je ovšem potřeba zdrojový soubor přeložit dvakrát.
+
+Vektorové obrázky lze vytvořit i~přímo v~\LaTeX u, například pomocí prostředí \texttt{ picture}.
+
+\begin{landscape}
+\begin{figure}
+\begin{center}
+\begin{picture}(250,250)(210,-100)
+    \linethickness{0.8 pt}
+    \put(50,-70){\line(0,1){300}}
+    \put(50,230){\line(1,0){550}}
+    \put(600,230){\line(0,-1){300}}
+    \put(600,-70){\line(-1,0){550}}
+    \put(520,180){\circle{40}}
+    \linethickness{5pt}
+    \put(70,-20){\line(1,0){510}}
+    %house
+    \linethickness{2.5pt}
+    \put(150,-20){\line(0,1){140}}
+    \put(280,120){\line(0,-1){100}}
+    \put(170,120){\line(-1,0){50}}
+    \put(190,120){\line(1,0){120}}
+    \put(120,120){\line(3,2){95}}
+    \put(310,120){\line(-3,2){96}}
+    \linethickness{1.5pt}
+    \put(155,130){\line(3,2){60}}
+    \put(275,130){\line(-3,2){61}}
+    \put(215,140){\circle{20}}
+    %door
+    \linethickness{2.5pt}
+    \put(170,-20){\line(0,1){70}}
+    \put(170,50){\line(1,0){35}}
+    \put(205,50){\line(0,-1){70}}
+    \put(198,15){\line(0,1){10}}
+    %window
+    \put(225,45){\line(0,1){45}}
+    \put(225,90){\line(1,0){35}}
+    \put(260,90){\line(0,-1){45}}
+    \put(260,45){\line(-1,0){35}}
+    \put(242.5,45){\line(0,1){45}}
+    \put(225,67.5){\line(1,0){35}}
+    %bushes
+    \linethickness{2.0pt}
+    \put(300,-20){\oval(80,80)[t]}
+    \put(300,10){\circle{5}}
+    \put(270,5){\circle{5}}
+    \put(285,-9){\circle{5}}
+    \put(325,3){\circle{5}}
+    \put(310,-7){\circle{5}}
+    %trees
+    \linethickness{1.4pt}
+    \put(400,120){\oval(70,100)[]}
+    \put(480,100){\oval(30,80)[]}
+    \linethickness{3.8pt}
+    \put(400,-20){\line(0,1){170}}
+    \linethickness{1.5pt}
+    \put(400,80){\line(-2,3){20}}
+    \put(400,70){\line(2,3){20}}
+    \put(400,110){\line(-2,3){15}}
+    \put(400,100){\line(2,3){15}}
+    \put(400,140){\line(-2,3){10}}
+    \put(400,130){\line(2,3){10}}
+    \linethickness{2.5pt}
+    \put(480,-20){\line(0,1){140}}
+    \linethickness{1pt}
+    \put(480,65){\line(-2,3){10}}
+    \put(480,80){\line(-2,3){10}}
+    \put(480,95){\line(-2,3){10}}
+    \put(480,110){\line(-2,3){10}}
+    \put(480,72){\line(2,3){10}}
+    \put(480,87){\line(2,3){10}}
+    \put(480,102){\line(2,3){10}}
+    \put(480,117){\line(2,3){7}}
+    
+    %fence left
+    \linethickness{1pt}
+    \put(150,40){\line(-1,0){80}}
+    \put(150,35){\line(-1,0){80}}
+    \put(150,10){\line(-1,0){80}}
+    \put(150,5){\line(-1,0){80}}
+    
+    \put(80,-20){\line(0,1){25}}
+    \put(80,10){\line(0,1){25}}
+    \put(80,40){\line(0,1){5}}
+    \put(80,45){\line(1,0){5}}
+    \put(85,40){\line(0,1){5}}
+    \put(85,10){\line(0,1){25}}
+    \put(85,-20){\line(0,1){25}}
+    
+    \put(95,-20){\line(0,1){25}}
+    \put(95,10){\line(0,1){25}}
+    \put(95,40){\line(0,1){5}}
+    \put(95,45){\line(1,0){5}}
+    \put(100,40){\line(0,1){5}}
+    \put(100,10){\line(0,1){25}}
+    \put(100,-20){\line(0,1){25}}
+    
+    \put(110,-20){\line(0,1){25}}
+    \put(110,10){\line(0,1){25}}
+    \put(110,40){\line(0,1){5}}
+    \put(110,45){\line(1,0){5}}
+    \put(115,40){\line(0,1){5}}
+    \put(115,10){\line(0,1){25}}
+    \put(115,-20){\line(0,1){25}}
+
+    \put(125,-20){\line(0,1){25}}
+    \put(125,10){\line(0,1){25}}
+    \put(125,40){\line(0,1){5}}
+    \put(125,45){\line(1,0){5}}
+    \put(130,40){\line(0,1){5}}
+    \put(130,10){\line(0,1){25}}
+    \put(130,-20){\line(0,1){25}}
+    
+    \put(140,-20){\line(0,1){25}}
+    \put(140,10){\line(0,1){25}}
+    \put(140,40){\line(0,1){5}}
+    \put(140,45){\line(1,0){5}}
+    \put(145,40){\line(0,1){5}}
+    \put(145,10){\line(0,1){25}}
+    \put(145,-20){\line(0,1){25}}
+    
+    %fence right
+    \linethickness{1pt}
+    \put(280,40){\line(1,0){300}}
+    \put(280,35){\line(1,0){300}}
+    \put(337,10){\line(1,0){243}}
+    \put(339,5){\line(1,0){241}}
+    
+    \put(280,20){\line(0,1){15}}
+    \put(280,40){\line(0,1){5}}
+    \put(280,45){\line(1,0){5}}
+    \put(285,40){\line(0,1){5}}
+    \put(285,20){\line(0,1){15}}
+
+    \put(295,20){\line(0,1){15}}
+    \put(295,40){\line(0,1){5}}
+    \put(295,45){\line(1,0){5}}
+    \put(300,40){\line(0,1){5}}
+    \put(300,20){\line(0,1){15}}
+
+    \put(310,20){\line(0,1){15}}
+    \put(310,40){\line(0,1){5}}
+    \put(310,45){\line(1,0){5}}
+    \put(315,40){\line(0,1){5}}
+    \put(315,20){\line(0,1){15}}
+    
+    \put(325,19){\line(0,1){16}}
+    \put(325,40){\line(0,1){5}}
+    \put(325,45){\line(1,0){5}}
+    \put(330,40){\line(0,1){5}}
+    \put(330,17){\line(0,1){18}}
+    
+    \put(340,3){\line(0,1){2}}
+    \put(340,10){\line(0,1){25}}
+    \put(340,40){\line(0,1){5}}
+    \put(340,45){\line(1,0){5}}
+    \put(345,40){\line(0,1){5}}
+    \put(345,10){\line(0,1){25}}
+    \put(345,-20){\line(0,1){25}}
+    
+    \put(355,-20){\line(0,1){25}}
+    \put(355,10){\line(0,1){25}}
+    \put(355,40){\line(0,1){5}}
+    \put(355,45){\line(1,0){5}}
+    \put(360,40){\line(0,1){5}}
+    \put(360,10){\line(0,1){25}}
+    \put(360,-20){\line(0,1){25}}
+    
+    \put(370,-20){\line(0,1){25}}
+    \put(370,10){\line(0,1){25}}
+    \put(370,40){\line(0,1){5}}
+    \put(370,45){\line(1,0){5}}
+    \put(375,40){\line(0,1){5}}
+    \put(375,10){\line(0,1){25}}
+    \put(375,-20){\line(0,1){25}}
+    
+    \put(385,-20){\line(0,1){25}}
+    \put(385,10){\line(0,1){25}}
+    \put(385,40){\line(0,1){5}}
+    \put(385,45){\line(1,0){5}}
+    \put(390,40){\line(0,1){5}}
+    \put(390,10){\line(0,1){25}}
+    \put(390,-20){\line(0,1){25}}
+    
+    \put(400,-20){\line(0,1){25}}
+    \put(400,10){\line(0,1){25}}
+    \put(400,40){\line(0,1){5}}
+    \put(400,45){\line(1,0){5}}
+    \put(405,40){\line(0,1){5}}
+    \put(405,10){\line(0,1){25}}
+    \put(405,-20){\line(0,1){25}}
+    
+    \put(415,-20){\line(0,1){25}}
+    \put(415,10){\line(0,1){25}}
+    \put(415,40){\line(0,1){5}}
+    \put(415,45){\line(1,0){5}}
+    \put(420,40){\line(0,1){5}}
+    \put(420,10){\line(0,1){25}}
+    \put(420,-20){\line(0,1){25}}
+    
+    \put(430,-20){\line(0,1){25}}
+    \put(430,10){\line(0,1){25}}
+    \put(430,40){\line(0,1){5}}
+    \put(430,45){\line(1,0){5}}
+    \put(435,40){\line(0,1){5}}
+    \put(435,10){\line(0,1){25}}
+    \put(435,-20){\line(0,1){25}}
+    
+    \put(445,-20){\line(0,1){25}}
+    \put(445,10){\line(0,1){25}}
+    \put(445,40){\line(0,1){5}}
+    \put(445,45){\line(1,0){5}}
+    \put(450,40){\line(0,1){5}}
+    \put(450,10){\line(0,1){25}}
+    \put(450,-20){\line(0,1){25}}
+    
+    \put(460,-20){\line(0,1){25}}
+    \put(460,10){\line(0,1){25}}
+    \put(460,40){\line(0,1){5}}
+    \put(460,45){\line(1,0){5}}
+    \put(465,40){\line(0,1){5}}
+    \put(465,10){\line(0,1){25}}
+    \put(465,-20){\line(0,1){25}}
+    
+    \put(475,-20){\line(0,1){25}}
+    \put(475,10){\line(0,1){25}}
+    \put(475,40){\line(0,1){5}}
+    \put(475,45){\line(1,0){5}}
+    \put(480,40){\line(0,1){5}}
+    \put(480,10){\line(0,1){25}}
+    \put(480,-20){\line(0,1){25}}
+    
+    \put(490,-20){\line(0,1){25}}
+    \put(490,10){\line(0,1){25}}
+    \put(490,40){\line(0,1){5}}
+    \put(490,45){\line(1,0){5}}
+    \put(495,40){\line(0,1){5}}
+    \put(495,10){\line(0,1){25}}
+    \put(495,-20){\line(0,1){25}}
+    
+    \put(505,-20){\line(0,1){25}}
+    \put(505,10){\line(0,1){25}}
+    \put(505,40){\line(0,1){5}}
+    \put(505,45){\line(1,0){5}}
+    \put(510,40){\line(0,1){5}}
+    \put(510,10){\line(0,1){25}}
+    \put(510,-20){\line(0,1){25}}
+    
+    \put(520,-20){\line(0,1){25}}
+    \put(520,10){\line(0,1){25}}
+    \put(520,40){\line(0,1){5}}
+    \put(520,45){\line(1,0){5}}
+    \put(525,40){\line(0,1){5}}
+    \put(525,10){\line(0,1){25}}
+    \put(525,-20){\line(0,1){25}}
+    
+    \put(535,-20){\line(0,1){25}}
+    \put(535,10){\line(0,1){25}}
+    \put(535,40){\line(0,1){5}}
+    \put(535,45){\line(1,0){5}}
+    \put(540,40){\line(0,1){5}}
+    \put(540,10){\line(0,1){25}}
+    \put(540,-20){\line(0,1){25}}
+    
+    \put(550,-20){\line(0,1){25}}
+    \put(550,10){\line(0,1){25}}
+    \put(550,40){\line(0,1){5}}
+    \put(550,45){\line(1,0){5}}
+    \put(555,40){\line(0,1){5}}
+    \put(555,10){\line(0,1){25}}
+    \put(555,-20){\line(0,1){25}}
+    
+    \put(565,-20){\line(0,1){25}}
+    \put(565,10){\line(0,1){25}}
+    \put(565,40){\line(0,1){5}}
+    \put(565,45){\line(1,0){5}}
+    \put(570,40){\line(0,1){5}}
+    \put(570,10){\line(0,1){25}}
+    \put(570,-20){\line(0,1){25}}
+\end{picture}
+\end{center}
+\caption{Vektorový obrázek moderního bydlení vhodného pro 21. století. (Buď to vytvořte stejný obrázek, anebo nakreslete pomocí\texttt{ picture }váš vlastní domov.)}
+\end{figure}
+\end{landscape}
+\end{document}
