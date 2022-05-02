@@ -22,7 +22,7 @@
 
 \title[Short title]{\huge Binární vyhledávací strom}
 \author{\Large Aleksandr Shevchenko}
-\institute{\small Vysoké učení technické v Brně\\
+\institute{\small Vysoké učení technické v~Brně\\
     Fakulta informačních technologií}
 \date{\today}
 
@@ -50,7 +50,7 @@
     \smallskip
     \begin{block}{Proč potřebujeme řadicí algoritmy?}
     \medskip
-    Pro rychlé vyhledávání a představu dat. Některé úlohy jsou nevyřešitelné bez zařazování.
+    Pro rychlé vyhledávání a~představu dat. Některé úlohy jsou nevyřešitelné bez zařazování.
     \end{block}
     \bigskip
     \bigskip
@@ -80,16 +80,16 @@
     \medskip
     Základní vlastnosti:
     \begin{itemize}
-        \item Levý podstrom uzlu obsahuje pouze uzly s klíči menšími než klíč uzlu.
-        \item Pravý podstrom uzlu obsahuje pouze uzly s klíči většími než klíč uzlu.
-        \item Levý a pravý podstrom musí být také binárním vyhledávacím stromem.
+        \item Levý podstrom uzlu obsahuje pouze uzly s~klíči menšími než klíč uzlu.
+        \item Pravý podstrom uzlu obsahuje pouze uzly s~klíči většími než klíč uzlu.
+        \item Levý a~pravý podstrom musí být také binárním vyhledávacím stromem.
     \end{itemize}
 \end{frame}
 
 \begin{frame}[t]{Vyhledávání klíče}
-    Kroky pro vyhledávání klíče v BST:
+    Kroky pro vyhledávání klíče v~BST:
     \begin{enumerate}
-        \item Ujístíme se, že daná hodnota je v povoleném rozsahu.
+        \item Ujístíme se, že daná hodnota je v~povoleném rozsahu.
         \item Hledáme kořenový uzel stromu.
         \item Pokud daná hodnota je menší než hodnota klíče uzlu, jdeme do levého podstromu, jinak do pravého.
         \item Pokud nenajdeme naší hodnotu nebo se nenarazíme na konec, opakujeme krok 3.
@@ -118,7 +118,7 @@
 
 \begin{frame}[t]{Vložení klíče}
     \bigskip
-    Nový klíč vždy vkládáme na listové úrovni. Hledáme ho pokud nenarazíme na situaci, když nemůžeme jít hlouběji a přidáváme k uzlu nový list.
+    Nový klíč vždy vkládáme na listové úrovni. Hledáme ho pokud nenarazíme na situaci, když nemůžeme jít hlouběji a~přidáváme k~uzlu nový list.
     \bigskip
     \begin{center}
         \includegraphics[scale=0.35]{strom.png}
@@ -129,8 +129,8 @@
     Při smazání klíče můžeme se narazit na několik situací:
     \begin{itemize}
         \item Uzel pro smazání je \textbf{listem}\,--\,jednoduše ho mažeme ze stromu.
-        \item Uzel pro smazání má \textbf{jedno dítě}\,--\,kopírujeme dítě do uzlu a mažeme dítě.
-        \item Uzel pro smazání má \textbf{dvě děti}\,--\,v pravém podstromu uzlu hledáme uzel s nejmenší hodnotou, kopírujeme jeho obsah do původního uzlu a mažeme list. Pokud pravý podstrom neexistuje, děláme to samé s největší hodnotou levého podstromu.
+        \item Uzel pro smazání má \textbf{jedno dítě}\,--\,kopírujeme dítě do uzlu a~mažeme dítě.
+        \item Uzel pro smazání má \textbf{dvě děti}\,--\,v~pravém podstromu uzlu hledáme uzel s~nejmenší hodnotou, kopírujeme jeho obsah do původního uzlu a~mažeme list. Pokud pravý podstrom neexistuje, děláme to samé s~největší hodnotou levého podstromu.
     \end{itemize}
     \medskip
     \begin{center}
@@ -153,13 +153,13 @@
         \ENDIF
     \STATE \}
     \end{algorithmic}
-    \caption{Pseudokód pro vyhledávání klíče v BST}
+    \caption{Pseudokód pro vyhledávání klíče v~BST}
     \label{alg:seq}
     \end{algorithm}
 \end{frame}
 
 \begin{frame}{Složitost BST, závěr}
-    Operace s BST se provádí rychleji, než s obyčejným polem. Při práci s polem potřebujeme $O(n)$ kroků, kde $n$ je velikost pole.
+    Operace s~BST se provádí rychleji, než s~obyčejným polem. Při práci s~polem potřebujeme $O(n)$ kroků, kde $n$ je velikost pole.
     
     Pro práci se stromem provádíme $O(h)$ operací, kde $h$ je maximální hloubka stromu. V nejoptimálnějším případě, když hloubka všech listů je stejná, strom má $n=2^{h}-1$ vrcholů, takže $O(h)=O(\log n)$. 
     
