@@ -16,7 +16,7 @@ ISC 1 | 2/4
 ISC 2 | 7/8
 ISU test 1 | 4/6
 ISU test 2 | 9/9
-ISU test 3 | -
+ISU test 3 | 8/9
 ITY 1 project | 9,5/10
 ITY 2 project | 15/15
 ITY 3 project | 14,5/15
