@@ -11,7 +11,7 @@ ILG | 5/5
 INC p. 1 | 1/5
 INC p. 2 | -
 IOS 1 project | 14/15
-IOS 2 project | -
+IOS 2 project | 15/15
 ISC 1 | 2/4
 ISC 2 | 7/8
 ISU test 1 | 4/6
