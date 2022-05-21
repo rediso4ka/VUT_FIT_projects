@@ -22,7 +22,7 @@ ITY 1 project | 9,5/10 | | | IZP | Basics of programming
 ITY 2 project | 15/15 | 
 ITY 3 project | 14,5/15 | 
 ITY 4 project | 14,5/15 | 
-ITY 5 project | - | 
+ITY 5 project | 3/15 | 
 IUS 1 project | 6/12 | 
 IUS 2 project | 14/16 | 
 IZG project | 16,4103/20 |
