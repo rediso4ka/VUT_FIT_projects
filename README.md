@@ -25,3 +25,10 @@ Points | 99/100 | 99/100 | 90/100 | 90/100 | 100/100 | 82/100 | pass
 Mark | A | A | A | A | A | B | pass
 Credits | 5 | 5 | 4 | 6 | 5 | 6 | 3 | 1 | 0 | 35
 
+2 year (summer 2023)
+
+:) | IDS | IPK | IPP | IZU | IAM | IJA | JS2 | TV-KP | TV-PLA-R | TV-TEN | sum
+--- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | ---
+Points | 80/100 | 74/100 | 81/100 | 99/100 | 100/100 | 95/100 | 90/100
+Mark | B | C | B | A | A | pass | A
+Credits | 5 | 4 | 5 | 4 | 5 | 4 | 3 | 1 | 0 | 1 | 32
