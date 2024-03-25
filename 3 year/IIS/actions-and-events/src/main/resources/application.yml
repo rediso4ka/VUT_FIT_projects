@@ -1,0 +1,13 @@
+spring:
+  main:
+      allow-circular-references: true
+  datasource:
+    url: jdbc:postgresql://iis-postgres.postgres.database.azure.com:5432/postgres?sslmode=require
+    username: rudoahxtks@iis-postgres # This property specifies the username to use when connecting to the database.
+    password: 37RF4hA01635B1VU # This property specifies the password associated with the provided username.
+  jpa:
+    hibernate:
+      ddl-auto: update # This property determines how Hibernate should handle the database schema.
+      properties:
+        hibernate:
+          dialect: org.hibernate.dialect.PostgreSQLDialect # This property specifies the Hibernate dialect for the database being used.

@@ -1,0 +1,19 @@
+.container {
+    padding: 16px;
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+}
+
+.title {
+
+}
+
+.scrollable {
+    padding-bottom: 80px;
+    /* overflow: auto; */
+}
+
+.header {
+    margin-bottom: 48px;
+}

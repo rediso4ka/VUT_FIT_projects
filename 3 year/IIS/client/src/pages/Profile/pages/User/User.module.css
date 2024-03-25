@@ -1,0 +1,54 @@
+.container{
+    display: flex;
+   align-items: stretch;
+    gap: 32px;
+}
+
+.avaContainer{
+
+}
+
+.ava {
+    aspect-ratio: 1;
+    height: 250px;
+    background-color: gray;
+    border-radius: 3px;
+}
+.detailsContainer {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    gap: 12px;
+}
+.details {
+    display: flex;
+    justify-content: space-between;
+    gap: 4px;
+
+}
+
+.details span{
+    font-weight: 600;
+}
+
+.adminIcon { 
+    color: rgb(176, 44, 44);
+}
+
+.managerIcon { 
+    color: rgb(248, 192, 38);
+}
+
+.login{
+    font-size: 32px;
+    font-weight: 600;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.settings{
+    position: absolute;
+    right: 16px;
+    top: 16px;
+}

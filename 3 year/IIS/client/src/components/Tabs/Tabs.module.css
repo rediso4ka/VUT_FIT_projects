@@ -1,0 +1,23 @@
+.tabs{
+    display: flex;
+}
+
+.tab{
+    color: rgb(57, 57, 57);
+    text-decoration: none;
+    padding: 8px;
+    border-top: 3px solid transparent;
+}
+
+.tab:hover {
+    background-color: #d5d5d5;
+}
+.active:hover {
+    background-color: #fff;
+}
+.active {
+    color: black;
+    text-decoration: none;
+    background-color: #fff;
+    border-top: 3px solid black;
+}

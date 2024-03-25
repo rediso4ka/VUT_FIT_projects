@@ -1,0 +1,38 @@
+.button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+    border-radius: 9px;
+    padding: 8px 16px;
+    font-weight: 500;
+    gap: 8px;
+}
+
+.button:hover {
+    background-color: #eeeeee;
+}
+
+.invert{
+    background-color: black;
+    color: white;
+}
+.button:disabled{
+    background-color: #e5e5e5;
+    color: #a1a1a1;
+    cursor:not-allowed;
+}
+
+.button:disabled:hover{
+    background-color: #e5e5e5;
+    color: #a1a1a1;
+}
+.invert:hover {
+    background-color: #292929;
+}
+
+.alignLeft{
+    justify-content: flex-start;
+}

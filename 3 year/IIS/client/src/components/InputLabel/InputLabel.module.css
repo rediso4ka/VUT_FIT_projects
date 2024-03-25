@@ -1,0 +1,24 @@
+/* :import("../Dropdown/Dropdown.module.css") {
+    dropdown: dropdown;
+} */
+
+.container {
+    /* display: flex; */
+    /* gap: 16px;
+    justify-content: space-between;
+    align-items: center; */
+}
+
+/* .container label {
+    flex: 4;
+}
+
+.container>input, 
+.container>textarea,
+.container>.dropdown {
+    flex: 3;
+} */
+
+.flexStart{
+    align-items: flex-start;
+}

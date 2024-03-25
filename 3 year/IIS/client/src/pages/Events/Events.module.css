@@ -1,0 +1,32 @@
+.events{
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 16px;
+}
+
+.filtersContainer{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    margin: 16px 0;
+    background-color: #fff;
+    padding: 8px;
+    border-radius: 3px;
+}
+
+.search{
+    width: 300px;
+}
+
+.filters{
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 24px;
+}
+.filterItem{
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}

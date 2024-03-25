@@ -1,0 +1,28 @@
+.empty {
+    cursor: pointer;
+    aspect-ratio: 1;
+    padding: 8px;
+    width: 170px;
+    height: 170px;
+    color: #c5c5c5;
+    background-color: #f3f3f3;
+    border: 3px solid #e1e1e1;
+    border-radius: 8px;
+    cursor: pointer;
+}
+
+.empty:hover{
+    background-color: #e6e6e6;
+    border: 3px solid #c9c9c9;
+}
+
+.border{
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.border span {
+    font-size: 32px;
+}

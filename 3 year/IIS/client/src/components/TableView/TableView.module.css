@@ -1,0 +1,10 @@
+.container {
+    background-color: #fff;
+    padding: 16px;
+    flex: 1;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    border-radius: 0px 3px 3px 3px;
+    
+}

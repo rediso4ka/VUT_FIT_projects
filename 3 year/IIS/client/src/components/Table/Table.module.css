@@ -1,0 +1,65 @@
+.container{
+    display: grid;
+    flex: 1;
+    overflow-y: auto;
+    /* height: 100%; */
+    position: relative;
+    grid-auto-rows: 42px;
+}
+
+.head{
+    font-weight: 600;
+    top: 0;
+    position: sticky;
+    background-color: #fff;
+    white-space: nowrap;
+}
+
+.cell{
+    border-bottom: 1px solid rgb(220, 220, 220);
+    padding: 12px;
+}
+
+.zebra {
+    background-color: #f1f1f1;
+}
+
+.filters{
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    margin-bottom: 16px;
+}
+
+.search{
+    width: 300px;
+}
+
+.actions{
+    display: flex;
+    gap: 8px;
+    align-items: center;
+}
+
+.status {
+    font-size: 14px;
+    padding: 5px 10px;
+    border-radius: 16px;
+}
+
+.accepted{
+    
+    background-color: #5bc05c;
+    color: #ecffed;
+}
+
+.pending{
+    background-color: #EAAB35;
+    color: #FFF4E0;
+}
+
+.rejected{
+    
+    background-color: #c45a5a;
+    color: #ffecec;
+}

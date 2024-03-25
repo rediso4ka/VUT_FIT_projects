@@ -1,0 +1,36 @@
+.container {
+    width: 360px;
+    
+}
+
+.inner {
+    border-radius: 0px 3px 3px 3px;
+    padding: 16px;
+    background-color: white;
+    display: flex;
+    gap: 16px;
+    flex-direction: column;
+}
+
+.outer{
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.title h4 {
+    font-size: 28px;
+}
+
+.container input {
+    padding: 8px;
+    width: 100%;
+}
+
+.actions {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}

@@ -1,0 +1,7 @@
+.container {
+    display: grid;
+    grid-template-columns: repeat(6, 1fr);
+    background-color: #fff;
+    padding: 16px;
+    border-radius: 3px;
+}

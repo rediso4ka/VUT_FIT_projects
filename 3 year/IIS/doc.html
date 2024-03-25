@@ -1,0 +1,110 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html>
+<head>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8"/>
+    <title>Projekt IIS</title>
+    <style type="text/css">
+    	table { border-collapse: collapse; }
+    	td, th { border: 1px solid black; padding: 0.3em 0.5em; text-align: left; }
+    	dt { font-weight: bold; margin-top: 0.5em; }
+    </style>
+</head>
+<body>
+
+<!-- Zkontrolujte prosím nastavení kódování v hlavičce dokumentu 
+     podle použitého editoru -->
+
+<h1>Akce a události</h1>
+
+<dl>
+	<dt>Autoři</dt>
+	<dd>Oleksandr Turytsia
+	    <a href="mailto:xturyt00@stud.fit.vutbr.cz">xturyt00@stud.fit.vutbr.cz</a> -
+		organizace týmové práce, frontend
+	</dd>
+	<dd>Vadim Goncearenco
+	    <a href="mailto:xgonce00@stud.fit.vutbr.cz">xgonce00@stud.fit.vutbr.cz</a> - 
+		backend
+	</dd>
+  <dd>Aleksandr Shevchenko
+	    <a href="mailto:xshevc01@stud.fit.vutbr.cz">xshevc01@stud.fit.vutbr.cz</a> - 
+		backend, dokumentace
+	</dd>
+	<dt>URL aplikace</dt>
+	<dd><a href="https://blue-mud-0f3bd8b03.4.azurestaticapps.net/">https://blue-mud-0f3bd8b03.4.azurestaticapps.net/</a></dd>
+</dl>
+
+<h2>Uživatelé systému pro testování</h2>
+<table>
+<tr><th>Login</th><th>Heslo</th><th>Role</th></tr>
+<tr><td>user</td><td>useruser</td><td>Registrovaný uživatel</td></tr>
+<tr><td>manager</td><td>managermanager</td><td>Moderátor</td></tr>
+<tr><td>admin</td><td>adminadmin</td><td>Administrátor</td></tr>
+</table>
+
+
+<h3>Video</h3>
+
+<a href="https://youtu.be/N-cUwGWRYe8" target="_blank">Video tady</a> 
+
+<h2>Implementace</h2>
+
+<p>Aplikaci jsme implementovali pomocí frameworku Java Spring Boot, jeho základní komponenty jsou:</p>
+<dt>Kontrolér:</dt>
+<p>Zodpovědný za zpracování uživatelských požadavků, mapování na vhodné metody a následné vrácení odpovědi. Jedná se o vrstvu, která obsluhuje webové žádosti a reaguje na uživatelské interakce.</p>
+
+<dt>Servis:</dt>
+<p>Obsahuje logiku aplikace a poskytuje operace, které mohou být volány kontrolérem. Slouží k abstrakci a oddělení logiky od prezentační vrstvy. Třídy v této vrstvě obsahují business logiku, validace a další operace.</p>
+
+<dt>Repozitář:</dt>
+<p>Stará se o komunikaci s databází a provádí operace, jako jsou vytváření, čtení, aktualizace a mazání dat. Tato vrstva poskytuje abstrakci nad persistentním uložištěm a skrývá detaily práce s databází.</p>
+
+<table>
+<tr><th>Kontrolér</th><th>Případ použití</th></tr>
+<tr><td>Administers</td><td>Akce, specifické pro administrátora, např. prohlížení logů</td></tr>
+<tr><td>Auth</td><td>Registrace a přihlášení uživatelů</td></tr>
+<tr><td>Category</td><td>Přidávání, aktualizace a odebírání kategorií</td></tr>
+<tr><td>Event</td><td>Přidávání, aktualizace, odebírání, prohlížení, zápis na události, správa komentářů a typů vstupných</td></tr>
+<tr><td>Place</td><td>Přidávání, aktualizace a odebírání míst konání akce</td></tr>
+<tr><td>User</td><td>Správa (ne)autorizováných uživatelů a rolí</td></tr>
+</table>
+
+<h3>Databáze</h3>
+
+<img src="doc/er-diagram.jpg" alt="ER Diagram">
+
+<h2>Instalace</h2>
+
+<p>Na začátku se musí nastartovat docker pro databázi:</p>
+
+<code>
+docker-compose up
+</code>
+
+<p>Pak se spustí backend (aplikace Spring Boor):</p>
+
+<pre>
+<code>
+cd actions-and-events
+mvn spring-boot:run
+</code>
+</pre>
+
+<p>A samotný frontend v React:</p>
+
+<pre>
+<code>
+cd client
+npm install
+npm start
+</code>
+</pre>
+  
+<p>Aplikace podporuje aktuální verze Java Spring Boot (3.1) a React (18.2.0).</p>
+
+<h2>Známé problémy</h2>
+<p>Všechny body zadání jsou implementovány.</p>
+
+</body>
+</html>

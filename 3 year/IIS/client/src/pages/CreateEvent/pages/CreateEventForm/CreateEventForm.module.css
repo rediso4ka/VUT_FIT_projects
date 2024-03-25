@@ -1,0 +1,46 @@
+.container {
+   display: grid;
+   grid-template-columns: repeat(4, 1fr);
+   gap: 16px;
+   width: 100%;
+   align-items: center;
+    background-color: #fff;
+    padding: 16px;
+    border-radius: 0px 3px 3px 3px;
+}
+
+.description {
+   display: grid;
+   grid-template-columns: 1fr 3fr;
+   gap: 8px;
+   grid-column-start: 1;
+   grid-column-end: 5;
+   margin: 16px 0;
+}
+.description label {
+   /* margin-right: 16px; */
+}
+.description textarea {
+   flex: 1;
+}
+
+.tickets {
+   width: 100%;
+   grid-column-start: 1;
+   grid-column-end: 5;
+}
+
+.sectionTitle{
+   margin-bottom: 8px;
+   grid-column-start: 1;
+   grid-column-end: 5;
+}
+
+.actions{
+   display: flex;
+   justify-content: flex-end;
+   align-items: center;
+   grid-column-start: 1;
+   grid-column-end: 5;
+   gap: 8px;
+}
