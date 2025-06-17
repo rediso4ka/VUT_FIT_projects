@@ -1,0 +1,23 @@
+Tým xbarto0d
+
+Seznam řešitelů:
+- Bc. Michal Bartošák (xbarto0d)
+- Bc. Pavel Osinek (xosine00)
+- Bc. Aleksandr Shevchenko (xshevc01)
+
+Zvolený e-shop:
+- Název: TradingShenzhen
+- URL e-shopu: https://tradingshenzhen.com/en/
+- Kategorie: Mobilní telefony
+- URL kategorie: https://tradingshenzhen.com/en/smartphones
+
+Význam sloupců ve výstupu TSV:
+1. Url produktu - URL adresa konkrétního produktu.
+2. Název produktu - Název mobilního telefonu/smartphonu.
+3. Aktuální cena - Aktuální cena produktu.
+4. Velikost interní paměti - Velikost interní paměti zařízení (v GB).
+5. Velikost operační paměti - Velikost operační paměti zařízení (v GB).
+6. Rozlišení předního fotoaparátu - Rozlišení předního fotoaparátu (v MPx).
+7. Rozlišení hlavního fotoaparátu - Rozlišení hlavního fotoaparátu (v MPx).
+8. Kapacita baterie - Kapacita baterie v miliampérhodinách (mAh).
+9. Bezdrátové nabíjení - Podpora bezdrátového nabíjení (ano/ne).
